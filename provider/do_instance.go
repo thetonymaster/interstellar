@@ -5,7 +5,7 @@ import (
 	"text/template"
 )
 
-type DigitalOceanInstance struct {
+type DOInstance struct {
 	ResourceName string
 	Image        string
 	Name         string
@@ -13,7 +13,7 @@ type DigitalOceanInstance struct {
 	Size         string
 }
 
-func GenerateInstanceFile(instances []DigitalOceanInstance, writer io.Writer) error {
+func GenerateInstanceFile(instances []DOInstance, writer io.Writer) error {
 	t, _ := template.New("droplet.tmpl").ParseFiles("../templates/digital_ocean/droplet.tmpl")
 	return t.Execute(writer, instances)
 }

@@ -3,7 +3,7 @@ package provider
 import "os"
 
 func ExampleGenerateInstanceFile() {
-	instances := []DigitalOceanInstance{{
+	instances := []DOInstance{{
 		ResourceName: "web",
 		Name:         "web-1",
 		Image:        "ubuntu-14-04-x64",
