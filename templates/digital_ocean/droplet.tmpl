@@ -1,0 +1,8 @@
+{{range .}}
+resource "digitalocean_droplet" "{{ .ResourceName }}" {
+  image  = "{{ .Image }}"
+  name   = "{{ .Name }}"
+  region = "{{ .Region }}"
+  size   = "{{ .Size }}"
+}
+{{end}}
