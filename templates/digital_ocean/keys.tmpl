@@ -1,0 +1,6 @@
+{{range .}}
+resource "digitalocean_ssh_key" "{{ .ResourceName }}" {
+  name       = "{{ .Name }}"
+  public_key = "${file("{{ .Path }}")}"
+}
+{{end}}
